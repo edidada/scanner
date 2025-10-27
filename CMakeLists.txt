@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)  # Minimum CMake version for Qt support
 
-project(scanner LANGUAGES CXX)  # Project name and language
+project(scanner_lab1 LANGUAGES CXX)  # Project name and language
 
 # Enable automatic processing of Qt files
 set(CMAKE_AUTOMOC ON)  # Auto-generate moc files for Qt classes
@@ -15,14 +15,15 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)  # Fallback to Qt5
 
 # Define source files
 set(PROJECT_SOURCES
-        code/scanner/main.cpp
-        code/scanner/widget.cpp
-        code/scanner/widget.h
-        code/scanner/widget.ui
+        code/scanner_lab1/main.cpp
+        code/scanner_lab1/widget.cpp
+        code/scanner_lab1/widget.h
+        code/scanner_lab1/widget.ui
 )
 
 # Create executable
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
+add_executable(lexer_cmd src/main.cpp)
 
 # Link Qt libraries
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Widgets)
